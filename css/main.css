@@ -1,0 +1,22 @@
+.content {
+  margin-top: 20px;
+  margin-left: 100px;
+  margin-right: 300px;
+  margin-bottom: 150px;
+}
+
+.content_1 {
+  margin-left: 40px;
+}
+
+.content_tabl {
+  margin-left: 400px;
+}
+
+html {
+  font-size: 23px;
+}
+
+p {
+  text-indent: 25px;
+}

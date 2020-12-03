@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <script src="../js/app.js"></script>
+    <title>{{ title }}</title>
+  </head>
+
+  <body style="margin-left: 42%; margin-top: 20%">
+    <h1>Введите данные:</h1>
+    <form action="pdf" method="POST">
+      <label for="FIO">ФИО:</label><br />
+      <input
+        style="width: 300px"
+        type="text"
+        id="fio"
+        name="fio"
+        placeholder="Введите Ф.И.О"
+      /><br />
+      <label for="inn">ИНН:</label><br />
+      <input
+        style="width: 300px"
+        type="text"
+        id="inn"
+        name="inn"
+        placeholder="Введите ИНН:"
+      /><br />
+      <label for="kpp">КПП:</label><br />
+      <input
+        style="width: 300px"
+        type="text"
+        id="kpp"
+        name="kpp"
+        placeholder="Введите КПП:"
+      /><br />
+      <label for="ogrn">ОГРН:</label><br />
+      <input
+        style="width: 300px"
+        type="text"
+        id="ogrn"
+        name="ogrn"
+        placeholder="Введите ОГРН:"
+      /><br />
+      <label for="ua">Юридический адрес:</label><br />
+      <input
+        style="width: 300px"
+        type="text"
+        id="ua"
+        name="ua"
+        placeholder="Введите Юридический адрес:"
+      /><br />
+      <label for="phone">Контактный телефон:</label><br />
+      <input
+        style="width: 300px"
+        type="text"
+        id="phone"
+        name="phone"
+        placeholder="Введите Контактный телефон:"
+      /><br />
+      <input
+        style="margin-top: 20px"
+        class="btn btn-primary"
+        type="submit"
+        value="Подтвердить"
+      />
+    </form>
+  </body>
+</html>

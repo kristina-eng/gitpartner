@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+  <title>{{ title }}</title>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="section-header">
+    <div class="section-header_block">
+      <div class="section-header_block__icon">
+        <img src="/img/location.png" alt="location" />
+      </div>
+      <div class="section-header_block__text">Пр-кт Карла-Маркса, 22</div>
+    </div>
+    <div class="section-header_block">
+      <div class="section-header_block__icon">
+        <img src="/img/clock.png" alt="clock" />
+      </div>
+      <div class="section-header_block__text">пн-чт с 9-00 до 18-00</div>
+    </div>
+    <div class="section-header_block">
+      <div class="section-header_block__icon">
+        <img src="/img/mail.png" alt="mail" />
+      </div>
+      <div class="section-header_block__text">partner2008@partner.ru</div>
+    </div>
+    <div class="section-header_block">
+      <div class="section-header_block__icon">
+        <img src="/img/call.png" alt="call" />
+      </div>
+      <div class="section-header_block__text">8 (86365)7-47-06</div>
+    </div>
+  </header>
+  <main>
+
+    <!-- SECTION__NAV -->
+
+    <section class="section__nav">
+      <div class="section_inner">
+        <ul class="section__nav-nav">
+          <li><a href="/">Главная</a></li>
+          <li><a href="/api/aboutUs">О нас</a></li>
+          <li><a href="/api/ourServices">Наши услуги</a></li>
+          <li><a href="/api/news">Новости</a></li>
+          <li><a href="/api/user/login">Личный кабинет</a></li>
+        </ul>
+        </nav>
+      </div>
+    </section>
+    <section style="
+      max-width: 600px;
+      text-align: center;
+      margin-left: 35%;
+      padding-top: 5%;
+    ">
+      <h2>{{ title }}</h2>
+      <ul class="list-group">
+        <li class="list-group-item">Ф.И.О: {{ name }}</li>
+        <li class="list-group-item">ИНН: {{ inn }}</li>
+        <li class="list-group-item">Название организации: {{ org }}</li>
+        <li class="list-group-item">КПП: {{ kpp }}</li>
+        <li class="list-group-item">ОГРН: {{ ogrn }}</li>
+        <li class="list-group-item">Юридический адрес: {{ ua }}</li>
+        <li class="list-group-item">Телефон: {{ phone }}</li>
+      </ul>
+      <p style="margin-top: 10px">Реквизиты для оплаты: 1111111111111111</p>
+      <div class="buttons" style="display: flex">
+        <form method="get" action="/" style="margin-right: 30px">
+          <button class="btn btn-primary" type="submit">На главную</button>
+        </form>
+        <form method="get" action="/api/user/login/{{ id }}/edit" style="margin-right: 15px">
+          <button class="btn btn-dark" type="submit">
+            Редактировать пользователя
+          </button>
+        </form>
+        <form method="post" action="/api/user/login/{{ id }}?_method=DELETE" style="margin-left: 15px">
+          <button class="btn btn-danger" type="submit">
+            Удалить пользователя
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <!-- FOOTER -->
+  <footer class="section__footer">
+    <div class="section-inner">
+      <div class="section__footer-wrapper">
+        <div class="section__footer-content">
+          <div class="section__footer-content-first">
+            © 2020. ООО ЦИППН "ПАРТЕР". Все права защищены. <br />
+            Копирование и распространение только с разрешения кампании
+          </div>
+          <div class="section__footer-content-second">
+            Пр-кт Карла-Маркса, 22, г. Каменск-Шахтинский, Ростовская область,
+            тел.: 8 (86365) 7-47-06
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
