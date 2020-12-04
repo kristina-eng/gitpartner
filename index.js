@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 var hbs = require('hbs');
 const path = require('path');
-const dotenv = require('dotenv');
+const dotenv = require('dotenv').config();
 const mongoose = require('mongoose');
 const authRoute = require('./routes/auth');
 const postRoute = require('./routes/posts');
@@ -11,12 +11,17 @@ const newsRoute = require('./routes/news');
 const ourServicesRoute = require('./routes/ourServices');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+const aws = require('aws-sdk');
 
-dotenv.config();
+const s3 = new aws.S3({
+  accessKeyId: process.env.DB_CONNECT,
+  secretAccessKey: process.env.SECRET_TOKEN
+});
+
 
 // подключение к базе данных
 mongoose.connect(
-  process.env.DB_CONNECT,
+  process.env.DB_CONNECT || s3.accessKeyId,
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => console.log('connected to db!'),
 );
