@@ -11,17 +11,13 @@ const newsRoute = require('./routes/news');
 const ourServicesRoute = require('./routes/ourServices');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-const aws = require('aws-sdk');
 
-const s3 = new aws.S3({
-  accessKeyId: process.env.DB_CONNECT,
-  secretAccessKey: process.env.SECRET_TOKEN
-});
+const PORT = process.env.PORT || 3001;
 
 
 // подключение к базе данных
 mongoose.connect(
-  process.env.DB_CONNECT || s3.accessKeyId,
+  process.env.DB_CONNECT,
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => console.log('connected to db!'),
 );
@@ -45,4 +41,4 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.listen(8080, () => console.log('Server is running'));
+app.listen(PORT, () => console.log('Server is running'));
